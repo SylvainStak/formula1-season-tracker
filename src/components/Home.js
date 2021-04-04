@@ -21,7 +21,6 @@ class Home extends Component {
         this.setState({
           driverStandingsData: response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings,
         });
-        console.log(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings);
       });
   }
 
