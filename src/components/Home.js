@@ -16,7 +16,7 @@ class Home extends Component {
   }
 
   async getDriverStandingsOverRounds() {
-    await axios.get('http://ergast.com/api/f1/current/driverstandings.json')
+    await axios.get('https://ergast.com/api/f1/current/driverstandings.json')
       .then(response => {
         this.setState({
           driverStandingsData: response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings,
