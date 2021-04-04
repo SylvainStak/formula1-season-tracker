@@ -1,16 +1,22 @@
 import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Schedule from './components/Schedule';
+import Nav from './components/Nav';
 
 function App() {
+  const appUri = '/formula1-season-tracker';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Formula 1 Season Tracker
-        </p>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Nav constUri={appUri}/> 
+        <Switch>
+          <Route path={`${appUri}`} exact component={Home} />
+          <Route path={`${appUri}/schedule`} exact component={Schedule} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
