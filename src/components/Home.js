@@ -32,20 +32,29 @@ class Home extends Component {
 
     const renderDriverStandings = driverStandingsData.map(driver => (
       <tr key={driver.Driver.driverId}>
-        <td scope="row" className="align-middle">{driver.position}</td>
+        <td className="align-middle">{driver.position}</td>
         <td className="align-middle">
           <img
             src={`/formula1-season-tracker/drivers/${driver.Driver.driverId}.png`}
             width="100"
-            height="100"/>
+            height="100"
+            alt={driver.Driver.driverId}/>
         </td>
         <td className="align-middle">
           <img
             src={`/formula1-season-tracker/flags/${driver.Driver.nationality}.png`}
             width="32"
             height="32"
-            className="flagimg"/>
+            className="flagimg"
+            alt={driver.Driver.nationality}/>
           {`${driver.Driver.givenName} ${driver.Driver.familyName}`}
+        </td>
+        <td className="align-middle">
+          <img
+            src={`/formula1-season-tracker/constructors/${driver.Constructors[0].constructorId}.png`}
+            width="50"
+            height="50"
+            alt={driver.Constructors[0].constructorId}/>
         </td>
         <td className="align-middle">{driver.Constructors[0].name}</td>
         <td className="align-middle points-column">{driver.points}</td>
@@ -62,6 +71,7 @@ class Home extends Component {
                 <th scope="col">Pos.</th>
                 <th scope="col"></th>
                 <th scope="col">Driver</th>
+                <th scope="col"></th>
                 <th scope="col">Constructor</th>
                 <th scope="col">Points</th>
               </tr>
@@ -72,8 +82,10 @@ class Home extends Component {
           </table>
         </div>
       ):(
-        <div className="spinner-border text-warning" role="status">
-          <span className="sr-only">Loading...</span>
+        <div className="text-center mt-5">
+          <div className="spinner-border text-warning" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
         </div>
       )}
       </>
