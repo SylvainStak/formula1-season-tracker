@@ -51,23 +51,30 @@ class Constructor extends Component {
       <>
         {/* RENDER CONSTRUCTORS TABLE IF THERE IS AVAILABLE DATA */}
         {constructorStandingsData && constructorStandingsData.length > 0 ? (
-        <div className="container mt-4">
-          <table className="table text-light">
-            <thead>
-              <tr>
-                <th scope="col">Pos.</th>
-                <th scope="col"></th>
-                <th scope="col">Constructor</th>
-                <th scope="col"></th>
-                <th scope="col">Points</th>
-                <th scope="col">Wins</th>
-              </tr>
-            </thead>
-            <tbody>
-              {renderConstructorStandings}
-            </tbody>
-          </table>
-        </div>
+        <>
+          <h1
+            className="text-center text-light mt-2"
+          >
+            2021 CONSTRUCTOR STANDINGS
+          </h1>
+          <div className="container mt-4">
+            <table className="table text-light">
+              <thead>
+                <tr>
+                  <th scope="col">Pos.</th>
+                  <th scope="col"></th>
+                  <th scope="col">Constructor</th>
+                  <th scope="col"></th>
+                  <th scope="col">Points</th>
+                  <th scope="col">Wins</th>
+                </tr>
+              </thead>
+              <tbody>
+                {renderConstructorStandings}
+              </tbody>
+            </table>
+          </div>
+        </>
       ):(
         <>
           {/* LOADING SPINNER */}

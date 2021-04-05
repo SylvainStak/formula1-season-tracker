@@ -62,24 +62,31 @@ class Home extends Component {
       <>
       {/* RENDER DRIVERS TABLE IF THERE IS AVAILABLE DATA */}
       {driverStandingsData && driverStandingsData.length > 0 ? (
-        <div className="container mt-4">
-          <table className="table text-light">
-            <thead>
-              <tr>
-                <th scope="col">Pos.</th>
-                <th scope="col"></th>
-                <th scope="col">Driver</th>
-                <th scope="col"></th>
-                <th scope="col">Constructor</th>
-                <th scope="col">Points</th>
-                <th scope="col">Wins</th>
-              </tr>
-            </thead>
-            <tbody>
-              {renderDriverStandings}
-            </tbody>
-          </table>
-        </div>
+        <>
+          <h1
+            className="text-center text-light mt-2"
+          >
+            2021 DRIVER STANDINGS
+          </h1>
+          <div className="container mt-4">
+            <table className="table text-light">
+              <thead>
+                <tr>
+                  <th scope="col">Pos.</th>
+                  <th scope="col"></th>
+                  <th scope="col">Driver</th>
+                  <th scope="col"></th>
+                  <th scope="col">Constructor</th>
+                  <th scope="col">Points</th>
+                  <th scope="col">Wins</th>
+                </tr>
+              </thead>
+              <tbody>
+                {renderDriverStandings}
+              </tbody>
+            </table>
+          </div>
+        </>
       ):(
         <>
         {/* LOADING SPINNER */}
