@@ -12,10 +12,6 @@ class Home extends Component {
   }
 
   async componentDidMount() {
-    await this.getDriverStandingsOverRounds();
-  }
-
-  async getDriverStandingsOverRounds() {
     await axios.get('https://ergast.com/api/f1/current/driverstandings.json')
       .then(response => {
         this.setState({
@@ -29,6 +25,7 @@ class Home extends Component {
       driverStandingsData,
     } = this.state;
 
+    {/* RENDER TABLE ROW FOR EACH DRIVER */}
     const renderDriverStandings = driverStandingsData.map(driver => (
       <tr key={driver.Driver.driverId}>
         <td className="align-middle">{driver.position}</td>
@@ -63,6 +60,7 @@ class Home extends Component {
 
     return (
       <>
+      {/* RENDER DRIVERS TABLE IF THERE IS AVAILABLE DATA */}
       {driverStandingsData && driverStandingsData.length > 0 ? (
         <div className="container mt-4">
           <table className="table text-light">
@@ -83,11 +81,14 @@ class Home extends Component {
           </table>
         </div>
       ):(
-        <div className="text-center mt-5">
-          <div className="spinner-border text-warning" role="status">
-            <span className="sr-only">Loading...</span>
+        <>
+        {/* LOADING SPINNER */}
+          <div className="text-center mt-5">
+            <div className="spinner-border text-warning" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
           </div>
-        </div>
+        </>
       )}
       </>
     );

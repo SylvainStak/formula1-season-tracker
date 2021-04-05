@@ -11,10 +11,6 @@ class Constructor extends Component {
   }
 
   async componentDidMount() {
-    await this.getConstructorStandingsData();
-  }
-
-  async getConstructorStandingsData() {
     await axios.get('https://ergast.com/api/f1/current/constructorstandings.json')
     .then(response => {
       this.setState({
@@ -28,6 +24,7 @@ class Constructor extends Component {
       constructorStandingsData,
     } = this.state;
 
+    {/* RENDER TABLE ROW FOR EACH CONSTRUCTOR */}
     const renderConstructorStandings = constructorStandingsData.map(constructor => (
       <tr key={constructor.Constructor.constructorId}>
         <td className="align-middle">{constructor.position}</td>
@@ -52,6 +49,7 @@ class Constructor extends Component {
 
     return (
       <>
+        {/* RENDER CONSTRUCTORS TABLE IF THERE IS AVAILABLE DATA */}
         {constructorStandingsData && constructorStandingsData.length > 0 ? (
         <div className="container mt-4">
           <table className="table text-light">
@@ -71,11 +69,14 @@ class Constructor extends Component {
           </table>
         </div>
       ):(
-        <div className="text-center mt-5">
-          <div className="spinner-border text-warning" role="status">
-            <span className="sr-only">Loading...</span>
+        <>
+          {/* LOADING SPINNER */}
+          <div className="text-center mt-5">
+            <div className="spinner-border text-warning" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
           </div>
-        </div>
+        </>
       )}
       </>
     );

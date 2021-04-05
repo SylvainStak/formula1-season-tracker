@@ -13,10 +13,6 @@ class Nav extends Component {
   }
 
   async componentDidMount() {
-    await this.getNextRaceData();
-  }
-
-  async getNextRaceData() {
     await axios.get('https://ergast.com/api/f1/current/next.json')
       .then(response => {
         this.setState({
@@ -38,6 +34,7 @@ class Nav extends Component {
       <>
         <div className="container-fluid link-nav-bar">
           <div className="row link-nav-bar-row">
+              {/* LINK --> DRIVERS STANDINGS */}
               <Link
                 to={`${constUri}`}
                 style={{ textDecoration: 'none' }}
@@ -46,6 +43,7 @@ class Nav extends Component {
                 Driver Standings
               </Link>
 
+              {/* LINK --> CONSTRUCTORS STANDINGS */}
               <Link
                 to={`${constUri}/constructor`}
                 style={{ textDecoration: 'none' }}
@@ -54,6 +52,7 @@ class Nav extends Component {
                 Constructor Standings
               </Link>
 
+              {/* LINK --> SCHEDULE / RACE RESULTS */}
               <Link
                 to={`${constUri}/schedule`}
                 style={{ textDecoration: 'none' }}
@@ -62,6 +61,7 @@ class Nav extends Component {
                 Schedule / Race Results
               </Link>
 
+              {/* NEXT RACE DATA */}
               <div
                 className="col-xs-12 col-md-6 bg-dark text-light d-flex justify-content-around"
               >
@@ -89,6 +89,7 @@ class Nav extends Component {
                 ) : 
                 (
                   <>
+                    {/* LOADING SPINNER */}
                     <div className="spinner-border text-warning mt-3" role="status">
                       <span className="sr-only">Loading...</span>
                     </div>
