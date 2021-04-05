@@ -57,6 +57,7 @@ class Home extends Component {
         </td>
         <td className="align-middle">{driver.Constructors[0].name}</td>
         <td className="align-middle points-column">{driver.points}</td>
+        <td className="align-middle points-column">{driver.wins}</td>
       </tr>
     ));
 
@@ -73,6 +74,7 @@ class Home extends Component {
                 <th scope="col"></th>
                 <th scope="col">Constructor</th>
                 <th scope="col">Points</th>
+                <th scope="col">Wins</th>
               </tr>
             </thead>
             <tbody>

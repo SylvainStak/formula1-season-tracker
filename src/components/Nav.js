@@ -22,7 +22,6 @@ class Nav extends Component {
         this.setState({
           nextRaceData: response.data.MRData.RaceTable.Races[0],
         });
-        console.log(response.data.MRData.RaceTable.Races[0]);
       });
   }
 
@@ -42,7 +41,7 @@ class Nav extends Component {
               <Link
                 to={`${constUri}`}
                 style={{ textDecoration: 'none' }}
-                className="col-2 bg-warning text-dark text-center"
+                className="col-xs-4 col-md-2 bg-warning text-dark text-center"
               >
                 Driver Standings
               </Link>
@@ -50,7 +49,7 @@ class Nav extends Component {
               <Link
                 to={`${constUri}/constructor`}
                 style={{ textDecoration: 'none' }}
-                className="col-2 bg-warning text-dark text-center midlink"
+                className="col-xs-4 col-md-2 bg-warning text-dark text-center midlink"
               >
                 Constructor Standings
               </Link>
@@ -58,13 +57,13 @@ class Nav extends Component {
               <Link
                 to={`${constUri}/schedule`}
                 style={{ textDecoration: 'none' }}
-                className="col-2 bg-warning text-dark text-center"
+                className="col-xs-4 col-md-2 bg-warning text-dark text-center"
               >
                 Schedule / Race Results
               </Link>
 
               <div
-                className="col-6 bg-dark text-light d-flex justify-content-around"
+                className="col-xs-12 col-md-6 bg-dark text-light d-flex justify-content-around"
               >
                 <div className="mt-3">Next Race:</div>  
                 {nextRaceData !== null ? 

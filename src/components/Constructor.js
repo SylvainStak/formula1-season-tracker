@@ -1,9 +1,85 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 
-function Constructor() {
+class Constructor extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      constructorStandingsData: [],
+    };
+  }
+
+  async componentDidMount() {
+    await this.getConstructorStandingsData();
+  }
+
+  async getConstructorStandingsData() {
+    await axios.get('https://ergast.com/api/f1/current/constructorstandings.json')
+    .then(response => {
+      this.setState({
+        constructorStandingsData: response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings,
+      });
+    });
+  }
+
+  render() {
+    const {
+      constructorStandingsData,
+    } = this.state;
+
+    const renderConstructorStandings = constructorStandingsData.map(constructor => (
+      <tr key={constructor.Constructor.constructorId}>
+        <td className="align-middle">{constructor.position}</td>
+        <td className="align-middle">
+          <img
+            src={`/formula1-season-tracker/constructors/${constructor.Constructor.constructorId}.png`}
+            width="50"
+            height="50"
+            alt={constructor.Constructor.constructorId}/>
+        </td>
+        <td className="align-middle">{constructor.Constructor.name}</td>
+        <td className="align-middle">
+          <img
+            src={`/formula1-season-tracker/cars/${constructor.Constructor.constructorId}.png`}
+            height="50"
+            alt={constructor.Constructor.constructorId}/>
+        </td>
+        <td className="align-middle points-column">{constructor.points}</td>
+        <td className="align-middle points-column">{constructor.wins}</td>
+      </tr>
+    ));
+
     return (
-        <h1 className="text-light">Standings under construction</h1>
+      <>
+        {constructorStandingsData && constructorStandingsData.length > 0 ? (
+        <div className="container mt-4">
+          <table className="table text-light">
+            <thead>
+              <tr>
+                <th scope="col">Pos.</th>
+                <th scope="col"></th>
+                <th scope="col">Constructor</th>
+                <th scope="col"></th>
+                <th scope="col">Points</th>
+                <th scope="col">Wins</th>
+              </tr>
+            </thead>
+            <tbody>
+              {renderConstructorStandings}
+            </tbody>
+          </table>
+        </div>
+      ):(
+        <div className="text-center mt-5">
+          <div className="spinner-border text-warning" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+      )}
+      </>
     );
+  }
 }
 
 export default Constructor;

@@ -10,11 +10,11 @@ function App() {
   return (
     <>
       <Router>
-        <Nav constUri={appUri}/> 
+        <Nav constUri={appUri}/>
         <Switch>
           <Route path={`${appUri}`} exact component={Home} />
-          <Route path={`${appUri}/schedule`} exact component={Schedule} />
           <Route path={`${appUri}/constructor`} exact component={Constructor} />
+          <Route path={`${appUri}/schedule`} exact component={Schedule} />          
         </Switch>
       </Router>
     </>
