@@ -1,0 +1,15 @@
+.nav-link:not(.active) {
+    color: #ff9c2b !important;
+}
+
+.nav-link.active {
+    background-color: #ff9c2b !important;
+    color: black !important;
+}
+
+.nav-link:not(.active),.nav-link.active {
+    font-weight: bold;
+    letter-spacing: .1rem;
+    cursor: pointer;
+    user-select: none;
+}
