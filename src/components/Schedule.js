@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../Schedule.css';
+import {Link} from 'react-router-dom';
 
 class Schedule extends Component {
   constructor(props) {
@@ -44,12 +45,17 @@ class Schedule extends Component {
           <div><em>{round.Circuit.circuitName}</em></div>
           <div><em>{`${round.date} / ${round.time.substring(0,5)} (UTC)`}</em></div>
           <div>
-            <button
-              type="button"
-              className="btn btn-primary mt-1 results-button disabled"
+            <Link
+              to={`/formula1-season-tracker/results/${round.round}`}
+              style={{ textDecoration: 'none' }}
             >
-              Race Results &gt;
-            </button>
+              <button
+                type="button"
+                className="btn btn-primary mt-1 results-button"
+              >
+                Race Results &gt;
+              </button>
+            </Link>
           </div>
         </div>
         <div className="ml-auto d-flex mr-4">
