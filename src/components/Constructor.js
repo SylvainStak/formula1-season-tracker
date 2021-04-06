@@ -24,7 +24,7 @@ class Constructor extends Component {
       constructorStandingsData,
     } = this.state;
 
-    {/* RENDER TABLE ROW FOR EACH CONSTRUCTOR */}
+    /* RENDER TABLE ROW FOR EACH CONSTRUCTOR */
     const renderConstructorStandings = constructorStandingsData.map(constructor => (
       <tr key={constructor.Constructor.constructorId}>
         <td className="align-middle">{constructor.position}</td>

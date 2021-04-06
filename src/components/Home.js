@@ -25,7 +25,7 @@ class Home extends Component {
       driverStandingsData,
     } = this.state;
 
-    {/* RENDER TABLE ROW FOR EACH DRIVER */}
+    /* RENDER TABLE ROW FOR EACH DRIVER */
     const renderDriverStandings = driverStandingsData.map(driver => (
       <tr key={driver.Driver.driverId}>
         <td className="align-middle">{driver.position}</td>
