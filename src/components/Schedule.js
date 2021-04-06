@@ -70,6 +70,11 @@ class Schedule extends Component {
         {/* RENDER SEASON SCHEDULE IF THERE IS AVAILABLE DATA */}
         {seasonSchedule && seasonSchedule.length > 0 ? (
           <>
+            <h1
+              className="text-center text-light mt-2"
+            >
+              2021 SEASON SCHEDULE
+            </h1>
             <div className="container">
               {renderSeasonSchedule}
             </div>
