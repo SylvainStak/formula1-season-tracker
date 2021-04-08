@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/formula1-season-tracker/static/css/main.5428545c.chunk.css",
-    "main.js": "/formula1-season-tracker/static/js/main.a97d1053.chunk.js",
-    "main.js.map": "/formula1-season-tracker/static/js/main.a97d1053.chunk.js.map",
-    "runtime-main.js": "/formula1-season-tracker/static/js/runtime-main.46601d9c.js",
-    "runtime-main.js.map": "/formula1-season-tracker/static/js/runtime-main.46601d9c.js.map",
-    "static/js/2.bb35aa81.chunk.js": "/formula1-season-tracker/static/js/2.bb35aa81.chunk.js",
-    "static/js/2.bb35aa81.chunk.js.map": "/formula1-season-tracker/static/js/2.bb35aa81.chunk.js.map",
-    "static/js/3.d944f6b6.chunk.js": "/formula1-season-tracker/static/js/3.d944f6b6.chunk.js",
-    "static/js/3.d944f6b6.chunk.js.map": "/formula1-season-tracker/static/js/3.d944f6b6.chunk.js.map",
+    "main.css": "/formula1-season-tracker/static/css/main.d8f0d5cc.chunk.css",
+    "main.js": "/formula1-season-tracker/static/js/main.dcfa9cc6.chunk.js",
+    "main.js.map": "/formula1-season-tracker/static/js/main.dcfa9cc6.chunk.js.map",
+    "runtime-main.js": "/formula1-season-tracker/static/js/runtime-main.44cd76e7.js",
+    "runtime-main.js.map": "/formula1-season-tracker/static/js/runtime-main.44cd76e7.js.map",
+    "static/js/2.0139c137.chunk.js": "/formula1-season-tracker/static/js/2.0139c137.chunk.js",
+    "static/js/2.0139c137.chunk.js.map": "/formula1-season-tracker/static/js/2.0139c137.chunk.js.map",
+    "static/js/3.fd2f4ff6.chunk.js": "/formula1-season-tracker/static/js/3.fd2f4ff6.chunk.js",
+    "static/js/3.fd2f4ff6.chunk.js.map": "/formula1-season-tracker/static/js/3.fd2f4ff6.chunk.js.map",
     "index.html": "/formula1-season-tracker/index.html",
-    "static/css/main.5428545c.chunk.css.map": "/formula1-season-tracker/static/css/main.5428545c.chunk.css.map",
-    "static/js/2.bb35aa81.chunk.js.LICENSE.txt": "/formula1-season-tracker/static/js/2.bb35aa81.chunk.js.LICENSE.txt"
+    "static/css/main.d8f0d5cc.chunk.css.map": "/formula1-season-tracker/static/css/main.d8f0d5cc.chunk.css.map",
+    "static/js/2.0139c137.chunk.js.LICENSE.txt": "/formula1-season-tracker/static/js/2.0139c137.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.46601d9c.js",
-    "static/js/2.bb35aa81.chunk.js",
-    "static/css/main.5428545c.chunk.css",
-    "static/js/main.a97d1053.chunk.js"
+    "static/js/runtime-main.44cd76e7.js",
+    "static/js/2.0139c137.chunk.js",
+    "static/css/main.d8f0d5cc.chunk.css",
+    "static/js/main.dcfa9cc6.chunk.js"
   ]
 }
