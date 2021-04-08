@@ -9,6 +9,7 @@ class Schedule extends Component {
 
     this.state = {
       seasonSchedule: [],
+      nextRound: null,
     };
   }
 
@@ -19,11 +20,19 @@ class Schedule extends Component {
           seasonSchedule: response.data.MRData.RaceTable.Races,
         });
       });
+
+    await axios.get('https://ergast.com/api/f1/current/next.json')
+      .then(response => {
+        this.setState({
+          nextRound: response.data.MRData.RaceTable.round,
+        });
+      });
   }
 
   render() {
     const {
       seasonSchedule,
+      nextRound,
     } = this.state;
 
     /* RENDER INFO BANNER FOR EACH RACE IN THE SCHEDULE */
@@ -48,10 +57,11 @@ class Schedule extends Component {
             <Link
               to={`/formula1-season-tracker/results/${round.round}`}
               style={{ textDecoration: 'none' }}
+              className={`${round.round && round.round >= parseInt(nextRound) ? 'disabled-link' : ''}`}
             >
               <button
                 type="button"
-                className="btn btn-primary mt-1 results-button"
+                className={`btn btn-primary mt-1 results-button ${round.round && round.round >= parseInt(nextRound) ? 'disabled' : ''}`}
               >
                 Race Results &gt;
               </button>

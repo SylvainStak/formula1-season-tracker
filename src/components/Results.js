@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import Race from './Results/Race';
+import Qualifying from './Results/Qualifying';
+import FastestLap from './Results/FastestLap';
 import '../Results.css';
 
 class Results extends Component {
@@ -13,16 +17,52 @@ class Results extends Component {
     */
     this.state = {
       activeTab: 'R',
+      raceResults: null,
+      qualifyingResults: null,
     };
   }
 
-  render() {
+  async componentDidMount() {
     const { match } = this.props;
-    const { activeTab } = this.state;
+
+    await axios.get(`https://ergast.com/api/f1/current/${match.params.roundId}/results.json`)
+      .then(response => {
+        this.setState({
+          raceResults: response.data.MRData.RaceTable.Races[0],
+        });
+      });
+
+    await axios.get(`https://ergast.com/api/f1/current/${match.params.roundId}/qualifying.json`)
+      .then(response => {
+        this.setState({
+          qualifyingResults: response.data.MRData.RaceTable.Races[0],
+        });
+      });
+  }
+
+  render() {
+    const {
+      activeTab,
+      raceResults,
+      qualifyingResults,
+    } = this.state;
 
     return (
       <>
-        <h1 className="text-light">Round {match.params.roundId}</h1>
+        {raceResults && raceResults !== null ? (
+          <>
+            <h1 className="text-center mt-5 text-light">{`${raceResults.season} ${raceResults.raceName}`}</h1>
+          </>
+        ) :
+        (
+          <>
+            <div className="text-center mt-5">
+              <div className="spinner-border text-warning" role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+            </div>
+          </>
+        )}
         <div className="container">
           <ul className="nav nav-tabs">
             {/* RACE RESULTS TAB */}
@@ -58,6 +98,7 @@ class Results extends Component {
             </li>
 
             {/* FASTEST LAPS RESULTS TAB */}
+            {/*
             <li
               className="nav-item"
               onClick={() => {
@@ -72,7 +113,18 @@ class Results extends Component {
                 Fastest Laps
               </a>
             </li>
+            */}
           </ul>
+
+          {activeTab === 'R' ? (
+            <Race
+              raceResults={raceResults} />
+          ) : (activeTab === 'Q' ? (
+            <Qualifying
+              qualifyingResults={qualifyingResults} />
+          ) : (activeTab === 'F' ? (
+            <FastestLap />
+          ) : (<></>)))}
         </div>
       </>
     );

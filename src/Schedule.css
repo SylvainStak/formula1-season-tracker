@@ -7,6 +7,10 @@
     font-weight: bold;
 }
 
+.schedule-item img {
+    user-select: none;
+}
+
 .circuit-img-container {
     background-color: white;
     height: 8rem;
@@ -28,4 +32,8 @@
 
 .race-country-name {
     font-weight: bold;
+}
+
+.disabled-link {
+    pointer-events: none;
 }
