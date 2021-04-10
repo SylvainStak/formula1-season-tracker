@@ -26,14 +26,22 @@
     outline: none;
 }
 
-.race-name {
-    font-size: 20px;
-}
-
 .race-country-name {
     font-weight: bold;
 }
 
 .disabled-link {
     pointer-events: none;
+}
+
+@media screen and (min-width: 680px) {
+    .race-name {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .results-button {
+        padding: 0px !important;
+    }
 }

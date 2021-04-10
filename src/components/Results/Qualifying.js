@@ -23,7 +23,7 @@ class Qualifying extends Component {
         {/* RENDER QUALIFYING RESULTS IF THERE IS AVAILABLE DATA */}
         {qualifyingResults && qualifyingResults !== null ? (
           <>
-            <div className="container mt-4">
+            <div className="container mt-4 table-responsive">
               <table className="table table-sm text-light">
                 <thead>
                   <tr>

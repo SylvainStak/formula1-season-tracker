@@ -18,3 +18,12 @@
         border-bottom: 1px solid black;
     }
 }
+
+.next-race-title {
+    margin-left: -0.4rem;
+    margin-right: .4rem;
+}
+
+.next-race-location {
+    font-weight: bold;
+}

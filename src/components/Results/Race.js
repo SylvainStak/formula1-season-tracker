@@ -48,9 +48,9 @@ class Race extends Component {
         </td>
         <td className="align-middle">{driver.Time && driver.Time.time}</td>
         <td className="align-middle">{driver.status && driver.status}</td>
-        <td className="align-middle">
+        <td className="align-middle d-flex">
           {driver.points && driver.points}
-          {driver.FastestLap && driver.FastestLap.rank === "1" && <i className="ml-3 fas fa-stopwatch fa-xs"></i>}
+          {driver.FastestLap && driver.FastestLap.rank === "1" && <i className="ml-3 mt-2 fas fa-stopwatch fa-xs"></i>}
         </td>
       </tr>
     ));
@@ -60,7 +60,7 @@ class Race extends Component {
         {/* RENDER RACE RESULTS IF THERE IS AVAILABLE DATA */}
         {raceResults && raceResults !== null ? (
           <>
-            <div className="container mt-4">
+            <div className="container mt-4 table-responsive">
               <table className="table table-sm text-light">
                 <thead>
                   <tr>

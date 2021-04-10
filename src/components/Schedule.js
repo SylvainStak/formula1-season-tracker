@@ -40,7 +40,7 @@ class Schedule extends Component {
       <div
         className="schedule-item bg-warning d-flex"
         key={round.Circuit.circuitId}>
-        <div className="circuit-img-container">
+        <div className="circuit-img-container d-none d-md-block">
           <img
             src={`/formula1-season-tracker/circuits/${round.Circuit.circuitId}.png`}
             width="154.5"
@@ -51,9 +51,9 @@ class Schedule extends Component {
         <div className="info-container mt-2 ml-2">
           <div>{`Round ${round.round}`}</div>
           <div><span className="race-name">{round.raceName}</span></div>
-          <div><em>{round.Circuit.circuitName}</em></div>
+          <div className="d-block d-xs-none"><em>{round.Circuit.circuitName}</em></div>
           <div><em>{`${round.date} / ${round.time.substring(0,5)} (UTC)`}</em></div>
-          <div>
+          <div className="">
             <Link
               to={`/formula1-season-tracker/results/${round.round}`}
               style={{ textDecoration: 'none' }}
@@ -68,14 +68,15 @@ class Schedule extends Component {
             </Link>
           </div>
         </div>
-        <div className="ml-auto d-flex mr-4">
-          <div className="mt-3 mr-2 race-country-name">
-            {`${round.Circuit.Location.locality} (${round.Circuit.Location.country})`}
+        <div className="ml-auto">
+          <div className="d-none d-sm-block mt-3 mr-1 mr-md-3 race-country-name">
+            <span className="float-right">{`${round.Circuit.Location.locality} (${round.Circuit.Location.country})`}</span>
           </div>
           <div>
           <img
             src={`/formula1-season-tracker/flags/scheduleflags/${round.Circuit.Location.country}.png`}
-            alt={round.Circuit.circuitId}/>
+            alt={round.Circuit.circuitId}
+            className="float-right mr-1 mr-md-3" />
           </div>
         </div>
       </div>

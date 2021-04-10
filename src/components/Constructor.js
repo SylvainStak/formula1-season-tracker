@@ -57,7 +57,7 @@ class Constructor extends Component {
           >
             2021 CONSTRUCTOR STANDINGS
           </h1>
-          <div className="container mt-4">
+          <div className="container mt-4 table-responsive">
             <table className="table text-light">
               <thead>
                 <tr>

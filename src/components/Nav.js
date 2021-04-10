@@ -65,12 +65,12 @@ class Nav extends Component {
               <div
                 className="col-xs-12 col-md-6 bg-dark text-light d-flex justify-content-around"
               >
-                <div className="mt-3">Next Race:</div>  
+                <div className="mt-3 next-race-title">Next Race:</div>
                 {nextRaceData !== null ? 
                 (
                   <>
                   <div>
-                    <div className="mt-1">{`${nextRaceData.raceName}, ${nextRaceData.Circuit.circuitName}`}</div> 
+                    <div className="mt-1 next-race-location">{`${nextRaceData.raceName}, ${nextRaceData.Circuit.circuitName}`}</div>
                     <div>{`${nextRaceData.date} / ${nextRaceData.time.substring(0,5)} (UTC)`}</div>
                   </div>
                   <div className="mt-1">
