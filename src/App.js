@@ -14,6 +14,7 @@ function App() {
         <Nav constUri={appUri}/>
         <Switch>
           <Route path={`${appUri}`} exact component={Home} />
+          <Route path="/" exact component={Home} />
           <Route path={`${appUri}/constructor`} exact component={Constructor} />
           <Route path={`${appUri}/schedule`} exact component={Schedule} />
           <Route path={`${appUri}/results/:roundId`} exact component={Results} />
