@@ -8,6 +8,7 @@ class Home extends Component {
 
     this.state = {
       driverStandingsData: [],
+      season: null,
     };
   }
 
@@ -17,6 +18,7 @@ class Home extends Component {
       .then(response => {
         this.setState({
           driverStandingsData: response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings,
+          season: response.data.MRData.StandingsTable.season,
         });
       });
   }
@@ -24,6 +26,7 @@ class Home extends Component {
   render() {
     const {
       driverStandingsData,
+      season,
     } = this.state;
 
     /* RENDER TABLE ROW FOR EACH DRIVER */
@@ -67,7 +70,7 @@ class Home extends Component {
           <h1
             className="text-center text-light mt-2"
           >
-            2021 DRIVER STANDINGS
+            {season} DRIVER STANDINGS
           </h1>
           <div className="container mt-4 table-responsive">
             <table className="table text-light">

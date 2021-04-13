@@ -7,6 +7,7 @@ class Constructor extends Component {
 
     this.state = {
       constructorStandingsData: [],
+      season: null,
     };
   }
 
@@ -16,6 +17,7 @@ class Constructor extends Component {
     .then(response => {
       this.setState({
         constructorStandingsData: response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings,
+        season: response.data.MRData.StandingsTable.season,
       });
     });
   }
@@ -23,6 +25,7 @@ class Constructor extends Component {
   render() {
     const {
       constructorStandingsData,
+      season,
     } = this.state;
 
     /* RENDER TABLE ROW FOR EACH CONSTRUCTOR */
@@ -56,7 +59,7 @@ class Constructor extends Component {
           <h1
             className="text-center text-light mt-2"
           >
-            2021 CONSTRUCTOR STANDINGS
+            {season} CONSTRUCTOR STANDINGS
           </h1>
           <div className="container mt-4 table-responsive">
             <table className="table text-light">

@@ -10,6 +10,7 @@ class Schedule extends Component {
     this.state = {
       seasonSchedule: [],
       nextRound: null,
+      season: null,
     };
   }
 
@@ -19,6 +20,7 @@ class Schedule extends Component {
       .then(response => {
         this.setState({
           seasonSchedule: response.data.MRData.RaceTable.Races,
+          season: response.data.MRData.RaceTable.season,
         });
       });
 
@@ -35,6 +37,7 @@ class Schedule extends Component {
     const {
       seasonSchedule,
       nextRound,
+      season,
     } = this.state;
 
     /* RENDER INFO BANNER FOR EACH RACE IN THE SCHEDULE */
@@ -92,7 +95,7 @@ class Schedule extends Component {
             <h1
               className="text-center text-light mt-2"
             >
-              2021 SEASON SCHEDULE
+              {season} SEASON SCHEDULE
             </h1>
             <div className="container">
               {renderSeasonSchedule}
