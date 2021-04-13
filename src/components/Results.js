@@ -25,6 +25,7 @@ class Results extends Component {
   async componentDidMount() {
     const { match } = this.props;
 
+    // Get specific round race results
     await axios.get(`https://ergast.com/api/f1/current/${match.params.roundId}/results.json`)
       .then(response => {
         this.setState({
@@ -32,6 +33,7 @@ class Results extends Component {
         });
       });
 
+    // Get specific round qualifying results
     await axios.get(`https://ergast.com/api/f1/current/${match.params.roundId}/qualifying.json`)
       .then(response => {
         this.setState({

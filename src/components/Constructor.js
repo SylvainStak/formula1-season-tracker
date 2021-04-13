@@ -11,6 +11,7 @@ class Constructor extends Component {
   }
 
   async componentDidMount() {
+    // Get constructor standings
     await axios.get('https://ergast.com/api/f1/current/constructorstandings.json')
     .then(response => {
       this.setState({

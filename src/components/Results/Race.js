@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../Race.css';
 
 class Race extends Component {
+  // Returns the difference between the starting and finish position
   getGridPositionDiff(pos, grid) {
     let diff = Math.abs(parseInt(pos) - parseInt(grid));
     // if grid == 0 then grid position was pits
@@ -9,6 +10,7 @@ class Race extends Component {
     return diff;
   }
 
+  // Returns true if driver improved the starting position
   positionImproved(pos, grid) {
     let newGrid = grid;
     if(parseInt(grid) === 0) newGrid = 20;

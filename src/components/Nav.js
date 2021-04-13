@@ -13,6 +13,7 @@ class Nav extends Component {
   }
 
   async componentDidMount() {
+    // Get next round race schedule
     await axios.get('https://ergast.com/api/f1/current/next.json')
       .then(response => {
         this.setState({

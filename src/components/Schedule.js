@@ -14,6 +14,7 @@ class Schedule extends Component {
   }
 
   async componentDidMount() {
+    // Get current season schedule
     await axios.get('https://ergast.com/api/f1/current.json')
       .then(response => {
         this.setState({
@@ -21,6 +22,7 @@ class Schedule extends Component {
         });
       });
 
+    // Get next round schedule
     await axios.get('https://ergast.com/api/f1/current/next.json')
       .then(response => {
         this.setState({

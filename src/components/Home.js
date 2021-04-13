@@ -12,6 +12,7 @@ class Home extends Component {
   }
 
   async componentDidMount() {
+    // Get driver standings
     await axios.get('https://ergast.com/api/f1/current/driverstandings.json')
       .then(response => {
         this.setState({
