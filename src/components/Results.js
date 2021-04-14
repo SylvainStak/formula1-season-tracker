@@ -100,7 +100,6 @@ class Results extends Component {
             </li>
 
             {/* FASTEST LAPS RESULTS TAB */}
-            {/*
             <li
               className="nav-item"
               onClick={() => {
@@ -115,7 +114,6 @@ class Results extends Component {
                 Fastest Laps
               </a>
             </li>
-            */}
           </ul>
 
           {activeTab === 'R' ? (
@@ -125,7 +123,8 @@ class Results extends Component {
             <Qualifying
               qualifyingResults={qualifyingResults} />
           ) : (activeTab === 'F' ? (
-            <FastestLap />
+            <FastestLap
+              raceResults={raceResults} />
           ) : (<></>)))}
         </div>
       </>
