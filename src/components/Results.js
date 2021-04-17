@@ -58,11 +58,7 @@ class Results extends Component {
         ) :
         (
           <>
-            <div className="text-center mt-5">
-              <div className="spinner-border text-warning" role="status">
-                <span className="sr-only">Loading...</span>
-              </div>
-            </div>
+            <h1 className="text-light text-center mt-5 mb-3">No results for this race yet</h1>
           </>
         )}
         <div className="container">

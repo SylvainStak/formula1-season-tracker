@@ -85,12 +85,7 @@ class Race extends Component {
           </>
         ):(
           <>
-          {/* LOADING SPINNER */}
-            <div className="text-center mt-5">
-              <div className="spinner-border text-warning" role="status">
-                <span className="sr-only">Loading...</span>
-              </div>
-            </div>
+            <h3 className="text-light text-center mt-5">Data not available</h3>
           </>
         )}
       </>

@@ -11,7 +11,7 @@ class FastestLap extends Component {
   // Extract fastestLaps array to state from raceResults prop
   componentDidMount() {
     const { raceResults } = this.props;
-    let results = raceResults && raceResults.Results || [];
+    let results = (raceResults && raceResults.Results) || [];
     let fastestLaps = [];
 
     for (let f = 0; f < results.length; f++) {
@@ -74,12 +74,7 @@ class FastestLap extends Component {
           </>
         ):(
           <>
-          {/* LOADING SPINNER */}
-            <div className="text-center mt-5">
-              <div className="spinner-border text-warning" role="status">
-                <span className="sr-only">Loading...</span>
-              </div>
-            </div>
+            <h3 className="text-light text-center mt-5">Data not available</h3>
           </>
         )}
       </>
