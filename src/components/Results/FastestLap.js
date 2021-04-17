@@ -11,7 +11,7 @@ class FastestLap extends Component {
   // Extract fastestLaps array to state from raceResults prop
   componentDidMount() {
     const { raceResults } = this.props;
-    let results = raceResults.Results;
+    let results = raceResults && raceResults.Results || [];
     let fastestLaps = [];
 
     for (let f = 0; f < results.length; f++) {
