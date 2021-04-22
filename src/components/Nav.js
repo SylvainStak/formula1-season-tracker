@@ -59,7 +59,7 @@ class Nav extends Component {
                 style={{ textDecoration: 'none' }}
                 className="col-xs-4 col-md-2 bg-warning text-dark text-center"
               >
-                Schedule
+                Schedule / Race Results
               </Link>
 
               {/* NEXT RACE DATA */}
