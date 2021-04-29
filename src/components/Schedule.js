@@ -81,7 +81,9 @@ class Schedule extends Component {
           <img
             src={`/formula1-season-tracker/flags/scheduleflags/${round.Circuit.Location.country}.png`}
             alt={round.Circuit.circuitId}
-            className="float-right mr-1 mr-md-3" />
+            className="float-right mr-1 mr-md-3"
+            width="64"
+            height="64"/>
           </div>
         </div>
       </div>
