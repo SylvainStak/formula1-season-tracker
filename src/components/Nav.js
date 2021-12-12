@@ -71,19 +71,19 @@ class Nav extends Component {
                 (
                   <>
                   <div>
-                    <div className="mt-1 next-race-location">{`${nextRaceData.raceName}, ${nextRaceData.Circuit.circuitName}`}</div>
-                    <div>{`${nextRaceData.date} / ${nextRaceData.time.substring(0,5)} (UTC)`}</div>
+                    <div className="mt-1 next-race-location">{`${nextRaceData?.raceName || 'Unknown'}, ${nextRaceData?.Circuit.circuitName || 'Unknown'}`}</div>
+                    <div>{`${nextRaceData?.date || 'Unknown'} / ${nextRaceData?.time.substring(0,5) || 'Unknown'} (UTC)`}</div>
                   </div>
                   <div className="mt-1">
                     <div>
-                      {`${nextRaceData.Circuit.Location.locality} (${nextRaceData.Circuit.Location.country})`}
+                      {`${nextRaceData?.Circuit.Location.locality || 'Unknown'} (${nextRaceData?.Circuit.Location.country || 'Unknown'})`}
                     </div>
                     <div>
                     <img
-                      src={`/formula1-season-tracker/flags/scheduleflags/${nextRaceData.Circuit.Location.country}.png`}
+                      src={`/formula1-season-tracker/flags/scheduleflags/${nextRaceData?.Circuit.Location.country || 'Unknown'}.png`}
                       width="50"
                       height="50"
-                      alt={nextRaceData.Circuit.Location.country}/>
+                      alt={nextRaceData?.Circuit.Location.country || 'Unknown'}/>
                     </div>
                   </div>
                   </>
