@@ -62,11 +62,11 @@ class Schedule extends Component {
             <Link
               to={`/formula1-season-tracker/results/${round.round}`}
               style={{ textDecoration: 'none' }}
-              className={`${round.round && round.round >= parseInt(nextRound) ? 'disabled-link' : ''}`}
+              //className={`${round.round && round.round >= parseInt(nextRound) ? 'disabled-link' : ''}`}
             >
               <button
                 type="button"
-                className={`btn btn-primary mt-1 results-button ${round.round && round.round >= parseInt(nextRound) ? 'disabled' : ''}`}
+                className={`btn btn-primary mt-1 results-button ${'enabled'/*round.round && round.round >= parseInt(nextRound) ? 'disabled' : ''*/}`}
               >
                 Race Results &gt;
               </button>
