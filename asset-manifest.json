@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/formula1-season-tracker/static/css/main.8e77745d.chunk.css",
-    "main.js": "/formula1-season-tracker/static/js/main.b4271bd6.chunk.js",
-    "main.js.map": "/formula1-season-tracker/static/js/main.b4271bd6.chunk.js.map",
+    "main.js": "/formula1-season-tracker/static/js/main.3be34e2a.chunk.js",
+    "main.js.map": "/formula1-season-tracker/static/js/main.3be34e2a.chunk.js.map",
     "runtime-main.js": "/formula1-season-tracker/static/js/runtime-main.44cd76e7.js",
     "runtime-main.js.map": "/formula1-season-tracker/static/js/runtime-main.44cd76e7.js.map",
     "static/js/2.5b9eb05a.chunk.js": "/formula1-season-tracker/static/js/2.5b9eb05a.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.44cd76e7.js",
     "static/js/2.5b9eb05a.chunk.js",
     "static/css/main.8e77745d.chunk.css",
-    "static/js/main.b4271bd6.chunk.js"
+    "static/js/main.3be34e2a.chunk.js"
   ]
 }
